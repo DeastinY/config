@@ -1,0 +1,22 @@
+[user]
+        email = 
+        name = 
+[alias]
+        treeall = "log --graph --pretty=oneline --decorate --abbrev-commit --all"
+        tree = "log --graph --pretty=oneline --decorate --abbrev-commit"
+        treelong = "log --graph --pretty='%C(yellow)%h %d %Cred%ad %Cgreen%an %Creset%s ' --date=relative"
+        logall  = "log --all --date-order"
+        nml  = "log --all --date-order ^HEAD"
+        stat = "log --stat HEAD^..HEAD"
+        svnl = svn log --oneline --show-commit
+        diffnl = diff --ignore-space-at-eol
+        ls = !git treelong
+        ll = !git treeall
+        svnr = svn rebase
+        svnd = svn dcommit
+        wdiff = diff --color-words
+[core]
+        autocrlf = true
+        safecrlf = false
+[push]
+        default = simple
