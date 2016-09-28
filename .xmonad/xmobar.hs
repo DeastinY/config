@@ -17,7 +17,6 @@ Config { font = "-misc-fixed-*-*-*-*-22-*-*-*-*-*-*-*"
        , overrideRedirect = True
        , commands = [ Run Uptime [] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Com "uname" ["-s","-r"] "" 36000
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run DynNetwork [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
                              , "--Low"      , "1000"       -- units: B/s
@@ -33,10 +32,11 @@ Config { font = "-misc-fixed-*-*-*-*-22-*-*-*-*-*-*-*"
                              , "--normal"   , "darkorange"
                              , "--high"     , "darkred"
                              ] 10
-                    , Run Battery ["-t","<left>% / <timeleft>","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10
+                    , Run Battery ["-t","<timeleft>","-c","-L","50","-H","75","-h","green","-n","yell","-l","red"] 600
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%multicpu% | %memory% | %dynnetwork%}\
-                    \{ %battery% | %uptime% | <fc=#ee9a00>%date%</fc>| %uname%"
+                    \{ %battery% | %uptime% | <fc=#ee9a00>%date%</fc>"
        }
+
