@@ -1,0 +1,13 @@
+! Use capslock + wasd for arrow keys on DVORAK. e is home ö is end.
+clear lock
+clear Mod3
+clear Mod4
+clear Mod5
+keycode  66 = Mode_switch
+add Mod3 = Mode_switch
+keycode  38 = a A Left Left
+keycode  39 = o O Down Down
+keycode  40 = e E Right Right
+keycode  25 = comma semicolon  Up Up
+keycode  24 = udiaeresis Udiaeresis Home Home
+keycode  26 = period colon End End
