@@ -1,0 +1,129 @@
+
+wtf:
+  colors:
+    border:
+      focusable: green
+      focused: orange
+      normal: gray
+  grid:
+    columns: [32, 32]
+    rows: [10, 10, 10, 6, 6, 10, 22]
+  refreshInterval: 1
+  mods:
+    feedreader:
+      enabled: true
+      title: "RWTH Updates"
+      feeds:
+      - https://maintenance.rz.rwth-aachen.de/ticket/status/messages/feed.rss
+      feedLimit: 20
+      position:
+        top: 1
+        left: 0
+        width: 2
+        height: 1
+      updateInterval: 900
+    resourceusage:
+      enabled: true
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 1
+    ipinfo:
+      title: "External IP"
+      border: true
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 5
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 150
+    digitalclock:
+      color: orange
+      enabled: true
+      font: bigfont
+      hourFormat: 24
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 60
+      title: ""
+      type: "digitalclock"
+    hackernews:
+      enabled: true
+      numberOfStories: 10
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 2
+      storyType: top
+      refreshInterval: 900
+    cmdrunner_a:
+      type: "cmdrunner"
+      title: "jrc combine jobs"
+      args: ["ec923888@login18-1.hpc.itc.rwth-aachen.de", "squeue -A jrc_combine"]
+      cmd: "ssh"
+      enabled: true
+      position:
+        top: 3
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 600
+    cmdrunner_b:
+      type: "cmdrunner"
+      title: "ec923888 jobs"
+      args: ["ec923888@login18-1.hpc.itc.rwth-aachen.de", "squeue -u ec923888"]
+      cmd: "ssh"
+      enabled: true
+      position:
+        top: 4
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 600
+    cmdrunner_c:
+      type: "cmdrunner"
+      title: "latest log"
+      args: ["ec923888@login18-1.hpc.itc.rwth-aachen.de", "./lastlog.sh"]
+      cmd: "ssh"
+      enabled: true
+      position: 
+        top: 6
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 60
+    prettyweather:
+      enabled: true
+      city: "aachen, germany"
+      position:
+        top: 5
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 300
+      unit: "m"
+      view: 0
+      language: "en"
+    textfile:
+      enabled: false
+      filePaths:
+      - "~/notes.md"
+      format: true
+      formatStyle: "dracula"
+      position:
+        top: 5
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 60
+      wrapText: true
