@@ -1,0 +1,224 @@
+title: Home
+views:
+  - badges: null
+    cards:
+      - entities:
+          - entity: binary_sensor.prusa_mk3_printing
+          - entity: binary_sensor.prusa_mk3_printing_error
+          - entity: binary_sensor.updater
+          - entity: person.richard
+        type: glance
+      - entity: weather.home
+        type: weather-forecast
+      - entities:
+          - entity: light.bedroom
+          - entity: light.dining_room
+          - entity: light.living_room
+          - entity: light.hallway
+        title: Lights
+        type: entities
+    icon: 'mdi:home-circle'
+    path: default_view
+    title: Overview
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.multi_sensor
+          - entity: sensor.pressure_13
+          - entity: sensor.multi_sensor_2
+          - entity: light.filament
+          - entity: light.desk_richard
+          - entity: light.column
+          - entity: light.desk_spot
+          - entity: light.ceiling
+          - entity: light.living_room
+          - entity: light.snake_light
+        title: Living Room
+        type: entities
+      - entities:
+          - scene.living_room_activate
+          - scene.living_room_gay
+          - scene.living_room_tv
+        title: Scene
+        type: entities
+      - entity: media_player.sonos_beam
+        type: media-control
+      - entity: media_player.shield
+        type: media-control
+      - entities:
+          - entity: sensor.dimmschalter_battery_level
+          - entity: sensor.iphone_von_richard_battery_level_2
+          - entity: sensor.tradfri_an_aus_taster_battery_level
+        type: glance
+      - entity: climate.thermostate_living_room
+        type: thermostat
+      - type: history-graph
+        entities:
+          - entity: sensor.multi_sensor
+        hours_to_show: 96
+        refresh_interval: 0
+    icon: 'mdi:sofa'
+    path: living-room
+    title: Living Room
+  - badges: []
+    cards:
+      - camera_image: camera.nea_cleaning_map
+        entity: camera.nea_cleaning_map
+        type: picture-entity
+      - entities:
+          - entity: vacuum.nea
+        hours_to_show: 24
+        refresh_interval: 0
+        type: history-graph
+      - entities:
+          - vacuum.nea
+        title: Vacuum
+        type: entities
+    icon: 'mdi:robot-vacuum'
+    path: nea
+    title: Nea
+  - badges: null
+    cards:
+      - entity: camera.basement_cam
+        type: picture-entity
+      - entity: camera.octoprint
+        type: picture-entity
+      - detail: 2
+        entity: sensor.prusa_mk3_actual_bed_temp
+        graph: line
+        hours_to_show: 6
+        type: sensor
+      - detail: 2
+        entity: sensor.prusa_mk3_actual_tool0_temp
+        graph: line
+        hours_to_show: 6
+        type: sensor
+      - entities:
+          - entity: sensor.prusa_mk3_current_state
+        hours_to_show: 24
+        refresh_interval: 0
+        type: history-graph
+      - entity: sensor.prusa_mk3_job_percentage
+        max: 100
+        min: 0
+        name: Done
+        theme: default
+        type: gauge
+    icon: 'mdi:printer-3d-nozzle'
+    path: 3d-print
+    title: 3D Print
+  - badges: []
+    cards:
+      - entity: media_player.ikea_sonos_speaker
+        type: media-control
+      - entities:
+          - entity: light.lightstrip_dining
+          - entity: light.floodl
+          - entity: light.dining_room
+        show_header_toggle: true
+        title: Dining Room
+        type: entities
+      - cards:
+          - entities:
+              - entity: switch.coffee_machine
+                secondary_info: last-changed
+            type: entities
+          - entities:
+              - entity: switch.coffee_machine
+            hours_to_show: 24
+            refresh_interval: 0
+            type: history-graph
+        type: vertical-stack
+      - entity: climate.thermostate_dining_room
+        type: thermostat
+    icon: 'mdi:dice-d20'
+    path: dining-room
+    title: Dining Room
+  - badges: []
+    cards:
+      - entities:
+          - entity: light.big_ball
+          - entity: light.flood
+          - entity: light.bedroom
+        title: Bedroom
+        type: entities
+      - entity: climate.thermostate_bed_room
+        type: thermostat
+    icon: 'mdi:bed-empty'
+    path: bedroom
+    title: Bedroom
+  - badges: []
+    cards:
+      - entities:
+          - entity: binary_sensor.bewegungsmelder
+          - entity: sensor.bewegungsmelder
+          - entity: sensor.bewegungsmelder_2
+          - entity: sensor.bewegungsmelder_battery_level
+          - entity: binary_sensor.tradfri_1
+          - entity: sensor.tradfri_1_battery_level
+          - entity: binary_sensor.tradfri_2
+        title: Hallway
+        type: entities
+      - entities:
+          - entity: binary_sensor.bewegungsmelder
+          - entity: binary_sensor.tradfri_1
+          - entity: binary_sensor.tradfri_2
+          - entity: light.hallway
+        hours_to_show: 1
+        refresh_interval: 0
+        type: history-graph
+      - entities:
+          - entity: light.hallway_upper
+          - entity: light.hallway_lower
+          - entity: light.hallway_front
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:stairs'
+    path: hallway
+    title: Hallway
+  - badges: []
+    cards:
+      - entities:
+          - entity: switch.nea_schedule
+          - entity: light.ball_small
+          - entity: light.floodl
+          - entity: light.dining_room
+        show_header_toggle: false
+        title: Kitchen
+        type: entities
+    icon: 'mdi:fridge'
+    path: kitchen
+    title: Kitchen
+  - badges: []
+    cards:
+      - entity: climate.thermostate_bed_room
+        type: thermostat
+      - entity: climate.thermostate_dining_room
+        type: thermostat
+      - entity: climate.thermostate_living_room
+        type: thermostat
+      - entities:
+          - entity: climate.thermostate_bed_room
+          - entity: climate.thermostate_dining_room
+          - entity: climate.thermostate_living_room
+        show_header_toggle: false
+        type: entities
+      - cards:
+          - entities:
+              - entity: climate.thermostate_bed_room
+            hours_to_show: 24
+            refresh_interval: 0
+            type: history-graph
+          - entities:
+              - entity: climate.thermostate_dining_room
+            hours_to_show: 24
+            refresh_interval: 0
+            type: history-graph
+          - entities:
+              - entity: climate.thermostate_living_room
+            hours_to_show: 24
+            refresh_interval: 0
+            type: history-graph
+        type: vertical-stack
+    icon: 'mdi:thermometer'
+    title: Heating
