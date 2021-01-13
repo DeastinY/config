@@ -1,10 +1,14 @@
 ! Use capslock + wasd for arrow keys on DVORAK. e is home ö is end.
-clear lock
-clear Mod3
-clear Mod4
-clear Mod5
+!clear lock  # Not needed in e.g. KDE
+!clear Mod3  # Not needed in e.g. KDE
+!clear Mod4  # Not needed in e.g. KDE
+!clear Mod5  # Not needed in e.g. KDE
 keycode  66 = Mode_switch
-add Mod3 = Mode_switch
+!add Mod3 = Mode_switch  # Not needed in e.g. KDE
+keycode  16 = 7 slash braceleft braceleft
+keycode  17 = 8 parenleft bracketleft bracketleft
+keycode  18 = 9 parenright bracketright bracketright
+keycode  19 = 0 equal braceright braceright
 keycode  38 = a A Left Left
 keycode  39 = o O Down Down
 keycode  40 = e E Right Right
